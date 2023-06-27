@@ -1,0 +1,44 @@
+﻿@model BlogCore.Models.Categoria
+
+@{
+    ViewData["Title"] = "Crear Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1 class="fw-bold text-center my-4">Nueva Categoria</h1>
+
+    <form asp-action="Crear">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 p-3 shadow bg-white rounded">
+                <div class="mb-2">
+                    <label asp-for="Nombre" class="form-label fw-semibold text-uppercase"></label>
+                    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre de Categoria" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-2">
+                    <label asp-for="Estado" class="form-label fw-semibold text-uppercase"></label>
+                    <select asp-for="Estado" class="form-select">
+                        <option selected disabled>Seleccione</option>
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary"> <i class="bi bi-database-add"></i> Guardar</button>
+                    <a asp-action="Index" class="btn btn-secondary"> <i class="bi bi-arrow-return-left"></i> Atras</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

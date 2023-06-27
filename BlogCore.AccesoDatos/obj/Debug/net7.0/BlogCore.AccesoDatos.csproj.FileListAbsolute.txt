@@ -1,0 +1,17 @@
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.AssemblyInfoInputs.cache
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.AssemblyInfo.cs
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.AccesoDatos.deps.json
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.AccesoDatos.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.AccesoDatos.pdb
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\refint\BlogCore.AccesoDatos.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.pdb
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\ref\BlogCore.AccesoDatos.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.Models.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.Models.pdb
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.csproj.CopyComplete
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.AccesoDatos.runtimeconfig.json
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.genruntimeconfig.cache
