@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\js\\articulo.js",
+      "PackagePath": "staticwebassets\\js\\articulo.js"
+    },
+    {
       "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\js\\categoria.js",
       "PackagePath": "staticwebassets\\js\\categoria.js"
     },

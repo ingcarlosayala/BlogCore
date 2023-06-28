@@ -13,5 +13,6 @@ namespace BlogCore.AccesoDatos.Data
 
         //Models Aqui
         public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Articulo> Articulo { get; set; }
     }
 }

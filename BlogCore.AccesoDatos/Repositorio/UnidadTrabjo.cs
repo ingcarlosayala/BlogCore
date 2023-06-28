@@ -13,11 +13,13 @@ namespace BlogCore.AccesoDatos.Repositorio
         private readonly ApplicationDbContext dbContext;
 
         public ICategoriaRepositorio Categoria { get; private set; }
+        public IArticuloRepositorio Articulo { get; private set; }
 
         public UnidadTrabjo(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
             Categoria = new CategoriaRepositorio(dbContext);
+            Articulo = new ArticuloRepositorio(dbContext);
         }
 
         public void Dispose()

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qgHzilalfsatTaVVaU/+Nh8w+xJ7k9QvgoIo5osXlI4=",
+  "Hash": "fRBnTYNGzkjLbx9srZla75r2l6afnbl2JXNmsbYLiPA=",
   "Source": "BlogCore",
   "BasePath": "_content/BlogCore",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\js\\articulo.js",
+      "SourceId": "BlogCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\",
+      "BasePath": "_content/BlogCore",
+      "RelativePath": "js/articulo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\articulo.js"
     },
     {
       "Identity": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\js\\categoria.js",

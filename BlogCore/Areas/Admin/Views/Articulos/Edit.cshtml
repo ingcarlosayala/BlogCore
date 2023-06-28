@@ -1,0 +1,63 @@
+﻿@model BlogCore.Models.ViewsModels.ArticuloVM
+
+@{
+    ViewData["Title"] = "Actualizar Articulos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1 class="fw-bold text-center my-4">Actualizar Articulo</h1>
+
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <input hidden asp-for="Articulo.Id"/>
+
+        <div class="row mx-1">
+            <div class="col-12 col-md-6 p-3 shadow bg-white rounded mb-3 mb-md-0 border-0 border-5 border-top border-primary">
+                <div class="mb-2">
+                    <label asp-for="Articulo.Nombre" class="form-label fw-semibold text-uppercase"></label>
+                    <input asp-for="Articulo.Nombre" type="text" class="form-control" placeholder="Nombre de Articulo" />
+                    <span asp-validation-for="Articulo.Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-2">
+                    <label asp-for="Articulo.Descripcion" class="form-label fw-semibold text-uppercase"></label>
+                    <input asp-for="Articulo.Descripcion" type="text" class="form-control" placeholder="Descripcion del Articulo" />
+                    <span asp-validation-for="Articulo.Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-2">
+                    <label asp-for="Articulo.ImagenUrl" class="form-label fw-semibold text-uppercase"></label>
+                    <input type="file"  name="archivo" class="form-control" />
+                    <span asp-validation-for="Articulo.ImagenUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-2">
+                    <label asp-for="Articulo.Categoria.Nombre" class="form-label fw-semibold text-uppercase"></label>
+                    <select asp-for="Articulo.CategoriaId" asp-items="@Model.ListaCategorias" class="form-select">
+                        <option selected disabled>Seleccione una Categoria</option>
+                    </select>
+                    <span asp-validation-for="Articulo.CategoriaId" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary"> <i class="bi bi-pencil-square"></i> Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-secondary"> <i class="bi bi-arrow-return-left"></i> Atras</a>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-5 offset-md-1 text-center text-md-start ">
+                <img src="@Model.Articulo.ImagenUrl" class="img-fluid shadow rounded-4 border-0 border-5 border-top border-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+

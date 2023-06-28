@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/carlo/Desktop/.NetCoreMVC/BlogCore/BlogCore/Areas/Admin/Views/Articulos/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWN1bG9zXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/Desktop/.NetCoreMVC/BlogCore/BlogCore/Areas/Admin/Views/Articulos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWN1bG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/Desktop/.NetCoreMVC/BlogCore/BlogCore/Areas/Admin/Views/Articulos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWN1bG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/carlo/Desktop/.NetCoreMVC/BlogCore/BlogCore/Areas/Admin/Views/Categorias/Crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmlhc1xDcmVhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

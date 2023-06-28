@@ -8,28 +8,20 @@ $(document).ready(function () {
 const CargarTabla = () => {
     datatable = $("#tblDatos").DataTable({
         "ajax": {
-            "url": "/Admin/Categorias/ObtenerTodos"
+            "url": "/Admin/Articulos/ObtenerTodos"
         },
-        "columns": [
-            { "data": "nombre", "width": "20%" },
-            {
-                "data": "estado",
-                "render": function (data) {
-                    if (data) {
-                        return "Activo"
-                    } else {
-                        return "Inactivo"
-                    }
-                },"width": "20"
-            },
+        "columns":[
+            {"data": "nombre", "width": "15%"},
+            {"data": "categoria.nombre", "width": "15%"},
+            { "data": "fechaCreacion", "width": "15%"},
             {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                                <a href="/Admin/Categorias/Edit/${data}" class="btn btn-dark btn-sm"> <i class="bi bi-pen"></i> </a>
-                                <a onclick=Delete("/Admin/Categorias/Delete/${data}") class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i> </a>
+                                <a href="/Admin/Articulos/Edit/${data}" class="btn btn-dark btn-sm"> <i class="bi bi-pen"></i> </a>
+                                <a onclick=Delete("/Admin/Articulos/Delete/${data}") class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i> </a>
                             </div>`;
-                },"width": "20"
+                },"width": "15%"
             }
         ]
     });
@@ -38,19 +30,19 @@ const CargarTabla = () => {
 const Delete = url => {
     Swal.fire({
         title: 'Estas Seguro?',
-        text: "¡No podrás revertir esto!",
+        text: "No podrás revertir esto!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Eliminar!'
+        confirmButtonText: 'SI, Eliminar!'
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
                 type: "DELETE",
                 url: url,
                 success: function (data) {
-                    if (data) {
+                    if (data.success) {
                         toastr.success(data.message);
                         datatable.ajax.reload();
                     } else {

@@ -9,6 +9,7 @@ namespace BlogCore.AccesoDatos.Repositorio.IRepositorio
     public interface IUnidadTrabajo:IDisposable
     {
         ICategoriaRepositorio Categoria { get;}
+        IArticuloRepositorio Articulo { get;}
         Task Guardar();
     }
 }
