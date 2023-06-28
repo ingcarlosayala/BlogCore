@@ -1,8 +1,22 @@
-﻿@{
+﻿@model IEnumerable<BlogCore.Models.Articulo>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-xl">
+    <div class="row mt-5">
+        @foreach (var articulo in Model)
+        {
+            <div class="col-12 col-sm-6  col-md-4 col-lg-3">
+                <div class="card rounded border-0 border border-top border-5 border-primary shadow bg-white mb-3 mb-md-0">
+                    <img src="@articulo.ImagenUrl" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-title text-center text-opacity-75 text-black fw-medium">@articulo.Nombre</p>
+                        <a asp-action="Detalle" class="btn btn-dark d-block" asp-route-Id="@articulo.Id">Detalles</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

@@ -1,4 +1,5 @@
-﻿using BlogCore.Models;
+﻿using BlogCore.AccesoDatos.Repositorio.IRepositorio;
+using BlogCore.Models;
 using BlogCore.Models.ViewsModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,16 +9,19 @@ namespace BlogCore.Areas.Cliente.Controllers
     [Area("Cliente")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IUnidadTrabajo unidadTrabajo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IUnidadTrabajo unidadTrabajo)
         {
-            _logger = logger;
+            this.unidadTrabajo = unidadTrabajo;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<Articulo> listaArticulo = await unidadTrabajo.Articulo.ObtenerTodos(incluirPropiedades:"Categoria");
+
+            return View(listaArticulo);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

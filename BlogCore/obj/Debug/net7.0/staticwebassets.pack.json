@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\imagenes\\articulos\\31b57219-0cdd-46db-b95c-1e4ffceb5fe7.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\articulos\\31b57219-0cdd-46db-b95c-1e4ffceb5fe7.JPG"
+    },
+    {
+      "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\imagenes\\articulos\\5bf0395b-75ac-4ba4-a1b6-16db4e94283d.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\articulos\\5bf0395b-75ac-4ba4-a1b6-16db4e94283d.JPG"
+    },
+    {
+      "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\imagenes\\articulos\\a0cf8b2b-d2b2-4f9c-a9c9-23858125e9cc.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\articulos\\a0cf8b2b-d2b2-4f9c-a9c9-23858125e9cc.JPG"
+    },
+    {
+      "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\imagenes\\articulos\\b30536f5-db4a-41ab-a8fe-b0cfb9575133.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\articulos\\b30536f5-db4a-41ab-a8fe-b0cfb9575133.JPG"
+    },
+    {
       "Id": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore\\wwwroot\\js\\articulo.js",
       "PackagePath": "staticwebassets\\js\\articulo.js"
     },
