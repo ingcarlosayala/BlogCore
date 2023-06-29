@@ -1,12 +1,48 @@
-﻿@model IEnumerable<BlogCore.Models.Articulo>
+﻿@model BlogCore.Models.ViewsModels.HomeVM
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
+<div class="container-fluid mb-5 px-0">
+
+    <!--Carrusel-->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @{
+                int count = 0;
+            }
+
+            @foreach (var item in Model.ListaSlider)
+            {
+                var itemDinamico = count++ == 0 ? "item active" : "item";
+
+                @if (item.Estado)
+                {
+                    <div class="carousel-item @itemDinamico" data-bs-interval="10000">
+                        <img src="@item.ImagenUrl" class="d-block w-100  border border-0">
+                        <h5 class="text-center bg-dark text-white text-uppercase py-2">@item.Nombre</h5>
+                    </div>
+                }
+
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden fw-bold">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--End Carrusel-->
+</div>
+
 <div class="container-xl">
-    <div class="row mt-5">
-        @foreach (var articulo in Model)
+
+    <div class="row">
+        @foreach (var articulo in Model.ListaArticulos)
         {
             <div class="col-12 col-sm-6  col-md-4 col-lg-3">
                 <div class="card rounded border-0 border border-top border-5 border-primary shadow bg-white mb-3 mb-md-0">
