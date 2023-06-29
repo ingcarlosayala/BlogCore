@@ -11,8 +11,8 @@
     <form asp-action="Crear" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly"></div>
 
-        <div class="row">
-            <div class="col-12 col-md-6 offset-md-3 p-3 shadow bg-white rounded">
+        <div class="row mx-2 mx-md-0">
+            <div class="col-12 col-md-6 offset-md-3 p-3 shadow bg-white rounded  border border-0 border-5 border-top border-primary">
                 <div class="mb-2">
                     <label asp-for="Articulo.Nombre" class="form-label fw-semibold text-uppercase"></label>
                     <input asp-for="Articulo.Nombre" type="text" class="form-control" placeholder="Nombre de Articulo" />

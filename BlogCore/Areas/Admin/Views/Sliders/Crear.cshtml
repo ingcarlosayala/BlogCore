@@ -1,23 +1,21 @@
-﻿@model BlogCore.Models.Categoria
+﻿@model BlogCore.Models.Slider
 
 @{
-    ViewData["Title"] = "Actualizar Categorias";
+    ViewData["Title"] = "Crear Slider";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div>
-    <h1 class="fw-bold text-center my-4">Actualizar Categoria</h1>
+    <h1 class="fw-bold text-center my-4">Nuevo Slider</h1>
 
-    <form asp-action="Edit">
+    <form asp-action="Crear" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly"></div>
 
-        <input hidden asp-for="Id"/>
-
-        <div class="row mx-2 mx-md-0">
+        <div class="row">
             <div class="col-12 col-md-6 offset-md-3 p-3 shadow bg-white rounded border border-0 border-5 border-top border-primary">
                 <div class="mb-2">
                     <label asp-for="Nombre" class="form-label fw-semibold text-uppercase"></label>
-                    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre de Categoria" />
+                    <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre de Slider" />
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
 
@@ -31,8 +29,13 @@
                     <span asp-validation-for="Estado" class="text-danger"></span>
                 </div>
 
+                <div class="mb-2">
+                    <label for="subirImagen" class="form-label fw-semibold text-uppercase">Slider</label>
+                    <input type="file" name="files" class="form-control" id="subirImagen" />
+                </div>
+
                 <div>
-                    <button type="submit" class="btn btn-primary"> <i class="bi bi-pencil-square"></i> Guardar Cambios</button>
+                    <button onclick="return SubirArchivo()" type="submit" class="btn btn-primary"> <i class="bi bi-database-add"></i> Guardar</button>
                     <a asp-action="Index" class="btn btn-secondary"> <i class="bi bi-arrow-return-left"></i> Atras</a>
                 </div>
             </div>
@@ -42,5 +45,20 @@
 
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        const SubirArchivo = () => {
+            const imagen = document.querySelector("#subirImagen");
+            if (imagen.value == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Debe seleccionar una imagen!',
+                })
+                return false;
+            }
+            return true;
+        }
+    </script>
 }
 
