@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using BlogCore.Models;
+using BlogCore.Utilidades;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -29,13 +31,14 @@ namespace BlogCore.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +46,7 @@ namespace BlogCore.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            this.roleManager = roleManager;
         }
 
         /// <summary>
@@ -97,11 +101,34 @@ namespace BlogCore.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+
+            [Required(ErrorMessage = "Nombre es requerido")]
+            public string Nombre { get; set; }
+
+            [Required(ErrorMessage = "Direccion es requerida")]
+            public string Direccion { get; set; }
+
+            [Required(ErrorMessage = "Ciudad es requerida")]
+            public string Ciudad { get; set; }
+
+            [Required(ErrorMessage = "Pais es requerido")]
+            public string Pais { get; set; }
         }
 
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            //Validamos si los roles existen si no se crean
+            if (!await roleManager.RoleExistsAsync(DS.Admin))
+            {
+                await roleManager.CreateAsync(new IdentityRole(DS.Admin));
+            }
+            if (!await roleManager.RoleExistsAsync(DS.Cliente))
+            {
+                await roleManager.CreateAsync(new IdentityRole(DS.Cliente));
+            }
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -112,7 +139,17 @@ namespace BlogCore.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                //var user = CreateUser();
+
+                var user = new AppUsuario
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Nombre = Input.Nombre,
+                    Direccion = Input.Direccion,
+                    Ciudad = Input.Ciudad,
+                    Pais = Input.Pais
+                };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -122,17 +159,35 @@ namespace BlogCore.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
-                        pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
+                    //Obtener el rol seleccionado
+                    string rol = Request.Form["radRole"].ToString();
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    //Validamos si el usuario es admin p Cliente
+                    if (rol == DS.Admin)
+                    {
+                        await _userManager.AddToRoleAsync(user, DS.Admin);
+                    }
+                    else if (rol == DS.Cliente)
+                    {
+                        await _userManager.AddToRoleAsync(user, DS.Cliente);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, DS.Cliente);
+                    }
+
+                    //var userId = await _userManager.GetUserIdAsync(user);
+                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    //var callbackUrl = Url.Page(
+                    //    "/Account/ConfirmEmail",
+                    //    pageHandler: null,
+                    //    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    //    protocol: Request.Scheme);
+
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

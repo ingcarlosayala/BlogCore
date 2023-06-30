@@ -1,12 +1,15 @@
 ﻿using BlogCore.AccesoDatos.Repositorio.IRepositorio;
 using BlogCore.Models;
 using BlogCore.Models.ViewsModels;
+using BlogCore.Utilidades;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 
 namespace BlogCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = DS.Admin)]
     public class ArticulosController : Controller
     {
         private readonly IUnidadTrabajo unidadTrabajo;

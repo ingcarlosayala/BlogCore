@@ -122,6 +122,71 @@
             "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\BlogCore.Utilidades.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\BlogCore.Utilidades.csproj",
+        "projectName": "BlogCore.Utilidades",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\BlogCore.Utilidades.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.7, )"
             }
           },
           "imports": [
@@ -173,6 +238,9 @@
               },
               "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Models\\BlogCore.Models.csproj": {
                 "projectPath": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Models\\BlogCore.Models.csproj"
+              },
+              "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\BlogCore.Utilidades.csproj": {
+                "projectPath": "C:\\Users\\carlo\\Desktop\\.NetCoreMVC\\BlogCore\\BlogCore.Utilidades\\BlogCore.Utilidades.csproj"
               }
             }
           }
