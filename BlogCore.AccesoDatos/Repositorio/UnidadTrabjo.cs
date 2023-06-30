@@ -15,6 +15,7 @@ namespace BlogCore.AccesoDatos.Repositorio
         public ICategoriaRepositorio Categoria { get; private set; }
         public IArticuloRepositorio Articulo { get; private set; }
         public ISliderRepositorio Slider { get; private set; }
+        public IAppUsuarioRepositorio AppUsuario { get; private set; }
 
         public UnidadTrabjo(ApplicationDbContext dbContext)
         {
@@ -22,6 +23,7 @@ namespace BlogCore.AccesoDatos.Repositorio
             Categoria = new CategoriaRepositorio(dbContext);
             Articulo = new ArticuloRepositorio(dbContext);
             Slider = new SliderRepositorio(dbContext);
+            AppUsuario = new AppUsuarioRepositorio(dbContext);
         }
 
         public void Dispose()

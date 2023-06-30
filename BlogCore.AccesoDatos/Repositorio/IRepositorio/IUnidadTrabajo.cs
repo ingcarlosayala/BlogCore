@@ -11,6 +11,7 @@ namespace BlogCore.AccesoDatos.Repositorio.IRepositorio
         ICategoriaRepositorio Categoria { get;}
         IArticuloRepositorio Articulo { get;}
         ISliderRepositorio Slider { get;}
+        IAppUsuarioRepositorio AppUsuario { get;}
         Task Guardar();
     }
 }
