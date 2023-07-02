@@ -4655,6 +4655,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "BlogCore.Models": "1.0.0",
+          "BlogCore.Utilidades": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.7",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7"

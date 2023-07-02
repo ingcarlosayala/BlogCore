@@ -15,3 +15,5 @@ C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.
 C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.csproj.CopyComplete
 C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.AccesoDatos.runtimeconfig.json
 C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\obj\Debug\net7.0\BlogCore.AccesoDatos.genruntimeconfig.cache
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.Utilidades.dll
+C:\Users\carlo\Desktop\.NetCoreMVC\BlogCore\BlogCore.AccesoDatos\bin\Debug\net7.0\BlogCore.Utilidades.pdb

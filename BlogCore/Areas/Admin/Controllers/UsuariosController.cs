@@ -2,6 +2,7 @@
 using BlogCore.Utilidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlogCore.Areas.Admin.Controllers
 {
@@ -19,13 +20,21 @@ namespace BlogCore.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var listaUsuario = await unidadTrabajo.AppUsuario.ObtenerTodos();
-            return View(listaUsuario);
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var usuarioActual = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            var usuarios = await unidadTrabajo.AppUsuario.ObtenerTodos(u => u.Id != usuarioActual.Value);
+            
+            return View(usuarios);
         }
 
         [HttpGet]
-        public async Task<IActionResult> BloquearUsuario(string id )
+        public async Task<IActionResult> BloquearUsuario(string id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             await unidadTrabajo.AppUsuario.BloquearUsuario(id);
             await unidadTrabajo.Guardar();
             return RedirectToAction(nameof(Index));
@@ -34,6 +43,11 @@ namespace BlogCore.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> DesbloquearUsuario(string id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             await unidadTrabajo.AppUsuario.DesbloquearUsuario(id);
             await unidadTrabajo.Guardar();
             return RedirectToAction(nameof(Index));

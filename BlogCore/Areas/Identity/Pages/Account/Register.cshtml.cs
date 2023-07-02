@@ -114,6 +114,10 @@ namespace BlogCore.Areas.Identity.Pages.Account
 
             [Required(ErrorMessage = "Pais es requerido")]
             public string Pais { get; set; }
+
+            [Display(Name = "Telefono")]
+            [DataType(DataType.PhoneNumber)]
+            public string PhoneNumber { get; set; }
         }
 
 
@@ -148,7 +152,8 @@ namespace BlogCore.Areas.Identity.Pages.Account
                     Nombre = Input.Nombre,
                     Direccion = Input.Direccion,
                     Ciudad = Input.Ciudad,
-                    Pais = Input.Pais
+                    Pais = Input.Pais,
+                    PhoneNumber = Input.PhoneNumber
                 };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);

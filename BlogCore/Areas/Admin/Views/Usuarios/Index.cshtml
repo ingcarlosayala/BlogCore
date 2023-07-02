@@ -19,6 +19,7 @@
                         <tr>
                             <th >@Html.DisplayNameFor(c => c.Nombre)</th>
                             <th class="w-25">@Html.DisplayNameFor(c => c.Email)</th>
+                            <th class="w-25">@Html.DisplayNameFor(c => c.PhoneNumber)</th>
                             <th>@Html.DisplayNameFor(c => c.Pais)</th>
                             <th class="text-center">Acciones</th>
 
@@ -30,12 +31,16 @@
                             <tr>
                                 <td>@Html.DisplayFor(u => usuario.Nombre)</td>
                                 <td>@Html.DisplayFor(u => usuario.Email)</td>
+                                <td>@Html.DisplayFor(u => usuario.PhoneNumber)</td>
                                 <td>@Html.DisplayFor(u => usuario.Pais)</td>
                                 <td class="text-center">
                                     @if (usuario.LockoutEnd == null || usuario.LockoutEnd < DateTime.Now)
                                     {
+                                        //Bloquear
                                         <a asp-action="BloquearUsuario" asp-route-Id="@usuario.Id" class="btn btn-success"> <i class="bi bi-unlock"></i> </a>
                                     }else{
+                                        
+                                        //Desbloquear
                                         <a asp-action="DesbloquearUsuario" asp-route-Id="@usuario.Id" class="btn btn-danger"> <i class="bi bi-lock"></i> </a>
                                     }
                                 </td>
@@ -47,3 +52,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/usuario.js"></script>
+}
